@@ -21,7 +21,9 @@ updateForm();
 
 function updateForm() {
   if (localStorage.getItem(FORM_KEY)) {
-    const { email, message } = JSON.parse(localStorage.getItem(FORM_KEY));
+    const { email = '', message = '' } = JSON.parse(
+      localStorage.getItem(FORM_KEY)
+    );
     refs.form.email.value = email;
     refs.form.message.value = message;
   }
